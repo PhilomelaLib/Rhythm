@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		E7EA8F0823BF54E700D88186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0723BF54E700D88186 /* Assets.xcassets */; };
 		E7EA8F0B23BF54E700D88186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0A23BF54E700D88186 /* Preview Assets.xcassets */; };
 		E7EA8F0E23BF54E700D88186 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0C23BF54E700D88186 /* LaunchScreen.storyboard */; };
+		E7EA8F1723BF590200D88186 /* nav in Frameworks */ = {isa = PBXBuildFile; productRef = E7EA8F1623BF590200D88186 /* nav */; };
+		E7EA8F1C23BF5B6900D88186 /* Doing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */; };
+		E7EA8F1D23BF5B6900D88186 /* Doing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */; };
+		E7EA8F1E23BF5B6900D88186 /* Iterm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1A23BF5B6900D88186 /* Iterm+CoreDataClass.swift */; };
+		E7EA8F1F23BF5B6900D88186 /* Iterm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1B23BF5B6900D88186 /* Iterm+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,10 @@
 		E7EA8F0A23BF54E700D88186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7EA8F0D23BF54E700D88186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7EA8F0F23BF54E700D88186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doing+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E7EA8F1A23BF5B6900D88186 /* Iterm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Iterm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E7EA8F1B23BF5B6900D88186 /* Iterm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Iterm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7EA8F1723BF590200D88186 /* nav in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,7 @@
 				E7EA8F0723BF54E700D88186 /* Assets.xcassets */,
 				E7EA8F0C23BF54E700D88186 /* LaunchScreen.storyboard */,
 				E7EA8F0F23BF54E700D88186 /* Info.plist */,
+				E7EA8F2023BF5B7700D88186 /* data */,
 				E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */,
 				E7EA8F0923BF54E700D88186 /* Preview Content */,
 			);
@@ -76,6 +87,17 @@
 				E7EA8F0A23BF54E700D88186 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E7EA8F2023BF5B7700D88186 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */,
+				E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */,
+				E7EA8F1A23BF5B6900D88186 /* Iterm+CoreDataClass.swift */,
+				E7EA8F1B23BF5B6900D88186 /* Iterm+CoreDataProperties.swift */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +116,9 @@
 			dependencies = (
 			);
 			name = Rhythm;
+			packageProductDependencies = (
+				E7EA8F1623BF590200D88186 /* nav */,
+			);
 			productName = Rhythm;
 			productReference = E7EA8EFB23BF54D100D88186 /* Rhythm.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +147,9 @@
 				Base,
 			);
 			mainGroup = E7EA8EF223BF54D100D88186;
+			packageReferences = (
+				E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */,
+			);
 			productRefGroup = E7EA8EFC23BF54D100D88186 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,10 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7EA8F1E23BF5B6900D88186 /* Iterm+CoreDataClass.swift in Sources */,
 				E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */,
 				E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */,
 				E7EA8F0623BF54D200D88186 /* ContentView.swift in Sources */,
+				E7EA8F1D23BF5B6900D88186 /* Doing+CoreDataProperties.swift in Sources */,
+				E7EA8F1F23BF5B6900D88186 /* Iterm+CoreDataProperties.swift in Sources */,
 				E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */,
+				E7EA8F1C23BF5B6900D88186 /* Doing+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chenba0/nav.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.49;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E7EA8F1623BF590200D88186 /* nav */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */;
+			productName = nav;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */ = {
