@@ -7,26 +7,28 @@
 //
 //
 
-import CoreData
 import Foundation
+import CoreData
+
 
 extension Iterm {
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Iterm> {
         return NSFetchRequest<Iterm>(entityName: "Iterm")
     }
 
     @NSManaged public var addingDate: Date?
     @NSManaged public var isDoing: Bool
-    @NSManaged public var isWorking: Bool
     @NSManaged public var reminber: Date?
     @NSManaged public var text: String?
     @NSManaged public var isDoone: Bool
     @NSManaged public var doing: NSOrderedSet?
+
 }
 
 // MARK: Generated accessors for doing
-
 extension Iterm {
+
     @objc(insertObject:inDoingAtIndex:)
     @NSManaged public func insertIntoDoing(_ value: Doing, at idx: Int)
 
@@ -56,4 +58,5 @@ extension Iterm {
 
     @objc(removeDoing:)
     @NSManaged public func removeFromDoing(_ values: NSOrderedSet)
+
 }

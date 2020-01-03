@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85BF023BF81B100FA11D6 /* ItermView.swift */; };
 		E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */; };
 		E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */; };
 		E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7C85BF023BF81B100FA11D6 /* ItermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItermView.swift; sourceTree = "<group>"; };
 		E7EA8EFB23BF54D100D88186 /* Rhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +76,8 @@
 				E7EA8F0723BF54E700D88186 /* Assets.xcassets */,
 				E7EA8F0C23BF54E700D88186 /* LaunchScreen.storyboard */,
 				E7EA8F0F23BF54E700D88186 /* Info.plist */,
+				E7C85BF023BF81B100FA11D6 /* ItermView.swift */,
 				E7EA8F2023BF5B7700D88186 /* data */,
-				E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */,
 				E7EA8F0923BF54E700D88186 /* Preview Content */,
 			);
 			path = Rhythm;
@@ -92,10 +94,11 @@
 		E7EA8F2023BF5B7700D88186 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */,
-				E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */,
+				E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */,
 				E7EA8F1A23BF5B6900D88186 /* Iterm+CoreDataClass.swift */,
 				E7EA8F1B23BF5B6900D88186 /* Iterm+CoreDataProperties.swift */,
+				E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */,
+				E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */,
 				E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */,
 				E7EA8F0623BF54D200D88186 /* ContentView.swift in Sources */,
+				E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */,
 				E7EA8F1D23BF5B6900D88186 /* Doing+CoreDataProperties.swift in Sources */,
 				E7EA8F1F23BF5B6900D88186 /* Iterm+CoreDataProperties.swift in Sources */,
 				E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */,

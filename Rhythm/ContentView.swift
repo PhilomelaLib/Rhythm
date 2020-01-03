@@ -6,40 +6,45 @@
 //  Copyright © 2020 chenbao. All rights reserved.
 //
 
+import CoreData
 import nav
 import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext)
     var moc: NSManagedObjectContext
-    
-    @State private var name: Bool = false
+
+    @FetchRequest(fetchRequest: Iterm.getAllIterm())
+    private var results: FetchedResults<Iterm>
+
     var body: some View {
-        ScrollView {
-            HStack {
-                self.heart
-                
-                Button(action: {
-                    self.name.toggle()
-                }) {
-                    Text("Hello,      World!")
+        NavigationView {
+            List {
+                ForEach(self.results, id: \Iterm.objectID) { i in
+                    Section {
+                        ItermView(objectId: i.objectID, contentView: self)
+                            .listRowBackground(Color.yellow)
+                    }
                 }
             }
-            .modifier(圆角单色背景卡(color: .yellow))
-            
-            .padding()
+            .navigationBarItems(trailing: self.addIterm)
+            .navigationBarTitle(self.results.count.description)
+            .listStyle(GroupedListStyle())
+
+            .environment(\.horizontalSizeClass, .regular)
         }
     }
-    
-    var heart: some View {
-        Image(systemName: name ? "heart.fill" : "heart")
-            .foregroundColor(name ? .red : .blue)
-    }
-    
+
     var addIterm: some View {
-        Button(action: {}) {
+        Button(action: self.addingIterm) {
             Text("add Iterm")
         }
+    }
+
+    func addingIterm() {
+        let i = Iterm(context: self.moc)
+        i.text = "this is text"
+        i.addingDate = Date()
     }
 }
 
