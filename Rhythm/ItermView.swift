@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import nav
 import SwiftUI
 
 struct ItermView: View {
@@ -20,24 +21,55 @@ struct ItermView: View {
     }
     
     var body: some View {
+        VStack {
+            self.header
+            
+            self.conment
+        }
+        .listRowBackground(self.entity.isWorking ? Color.green : Color.clear)
+        .contextMenu { self.menu }
+    }
+    
+    @Environment(\.colorScheme) var colorscheme: ColorScheme
+}
+
+extension ItermView {
+    // MARK: - some Views
+    
+    var headerFont: Font { .title }
+    
+    var header: some View {
         HStack(alignment: .center) {
             self.heart
             
-            self.text
-            
+            Text("\(self.entity.title ?? "")")
+                .foregroundColor(self.colorscheme == .dark ? Color.white : Color.black)
             Spacer()
             
             self.startAndPause
         }
-        .frame(alignment: .center)
+        .frame(maxWidth: .infinity, alignment: .center)
+        .font(self.headerFont)
     }
     
-    var text: some View {
-        VStack(alignment: .leading) {
-            Text("\(self.entity.text ?? "")")
-            Text(self.entity.addingDate?.description ?? "")
-            ForEach(self.entity.doing?.array as! [Doing], id: \Doing.start){ d in
-                Text("Doing")
+    var conment: some View {
+        Group {
+            if self.entity.conment != nil {
+                HStack {
+                    Text("\(self.entity.conment ?? "")")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+    
+    var doings: some View {
+        ForEach(self.entity.doing?.array as! [Doing], id: \Doing.start) { (d: Doing) in
+            VStack {
+                Text(d.start?.description ?? "none")
+                d.end?.description ?? "end none"
             }
         }
     }
@@ -51,9 +83,35 @@ struct ItermView: View {
     }
     
     var startAndPause: some View {
-        Image(systemName: self.entity.isWorking ? "pause.fill" : "play.fill")
-            .onTapGesture {
-                self.entity.doingToggle(context: self.contentView.moc)
+        Group {
+            if !self.entity.isDoone {
+                Image(systemName: self.entity.isWorking ? "pause.fill" : "play.fill")
+                    .onTapGesture {
+                        self.entity.doingToggle(context: self.contentView.moc)
+                    }
+            } else {
+                self.entity.总耗时.foregroundColor(.gray)
             }
+        }
+    }
+}
+
+extension ItermView {
+    // MARK: - context Menu
+    
+    var menu: some View {
+        Group {
+            Button("删除") {
+                Iterm.shared.delete(self.entity)
+                
+                do {
+                    try Iterm.shared.save()
+                } catch {
+                    whenDebugCatching(err: error) {
+                        fatalError()
+                    }
+                }
+            }
+        }
     }
 }

@@ -7,12 +7,10 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Doing {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Doing> {
         return NSFetchRequest<Doing>(entityName: "Doing")
     }
@@ -20,5 +18,16 @@ extension Doing {
     @NSManaged public var start: Date?
     @NSManaged public var end: Date?
     @NSManaged public var parent: Iterm?
+}
 
+extension Doing {
+    var 持续时间: TimeInterval {
+        if let start = self.start {
+            if let end = self.end {
+                return start.distance(to: end)
+            }
+        }
+
+        return 0
+    }
 }

@@ -14,42 +14,61 @@ struct ContentView: View {
     @Environment(\.managedObjectContext)
     var moc: NSManagedObjectContext
 
-    @FetchRequest(fetchRequest: Iterm.getAllIterm())
-    private var results: FetchedResults<Iterm>
+    @FetchRequest(fetchRequest: Iterm.未完成())
+    private var 未完成: FetchedResults<Iterm>
+
+    @FetchRequest(fetchRequest: Iterm.已完成())
+    private var 已完成: FetchedResults<Iterm>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(self.results, id: \Iterm.objectID) { i in
+                ForEach(self.未完成, id: \Iterm.objectID) { i in
                     Section {
                         ItermView(objectId: i.objectID, contentView: self)
-                            .listRowBackground(Color.yellow)
+                    }
+                }
+
+                if self.doned {
+                    ForEach(self.已完成, id: \Iterm.objectID) { i in
+
+                        Section {
+                            ItermView(objectId: i.objectID, contentView: self)
+                        }
                     }
                 }
             }
-            .navigationBarItems(trailing: self.addIterm)
-            .navigationBarTitle(self.results.count.description)
+            .navigationBarItems(leading:
+                Button(action: { self.doned.toggle() }) { Text("show doned") },
+                                trailing: self.addIterm)
+            .navigationBarTitle(self.未完成.count.description)
             .listStyle(GroupedListStyle())
 
             .environment(\.horizontalSizeClass, .regular)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
+    @State private var doned: Bool = false
+}
+
+extension ContentView {
     var addIterm: some View {
-        Button(action: self.addingIterm) {
-            Text("add Iterm")
+//        Button(action: self.addingIterm) {
+//            Text("add Iterm")
+//        }
+        
+        sheetButton(destination: {creatingView()}) {
+              Text("show")
         }
     }
 
     func addingIterm() {
         let i = Iterm(context: self.moc)
-        i.text = "this is text"
-        i.addingDate = Date()
-    }
-}
+        i.title = "做一个 创建 新 Item 的 页面"
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        i.addingDate = Date()
+
+        try! self.moc.save()
     }
 }

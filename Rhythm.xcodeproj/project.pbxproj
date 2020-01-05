@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85BF023BF81B100FA11D6 /* ItermView.swift */; };
+		E7C85C1523C0D5CC00FA11D6 /* creatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */; };
 		E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */; };
 		E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */; };
 		E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		E7C85BF023BF81B100FA11D6 /* ItermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItermView.swift; sourceTree = "<group>"; };
+		E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rhythm.entitlements; sourceTree = "<group>"; };
+		E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creatingView.swift; sourceTree = "<group>"; };
 		E7EA8EFB23BF54D100D88186 /* Rhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7C85C1323C0D5B400FA11D6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E7C85BF023BF81B100FA11D6 /* ItermView.swift */,
+				E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		E7EA8EF223BF54D100D88186 = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +82,14 @@
 		E7EA8EFD23BF54D100D88186 /* Rhythm */ = {
 			isa = PBXGroup;
 			children = (
+				E7C85C1323C0D5B400FA11D6 /* views */,
+				E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */,
 				E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */,
 				E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */,
 				E7EA8F0523BF54D200D88186 /* ContentView.swift */,
 				E7EA8F0723BF54E700D88186 /* Assets.xcassets */,
 				E7EA8F0C23BF54E700D88186 /* LaunchScreen.storyboard */,
 				E7EA8F0F23BF54E700D88186 /* Info.plist */,
-				E7C85BF023BF81B100FA11D6 /* ItermView.swift */,
 				E7EA8F2023BF5B7700D88186 /* data */,
 				E7EA8F0923BF54E700D88186 /* Preview Content */,
 			);
@@ -183,6 +196,7 @@
 				E7EA8F1E23BF5B6900D88186 /* Iterm+CoreDataClass.swift in Sources */,
 				E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */,
 				E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */,
+				E7C85C1523C0D5CC00FA11D6 /* creatingView.swift in Sources */,
 				E7EA8F0623BF54D200D88186 /* ContentView.swift in Sources */,
 				E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */,
 				E7EA8F1D23BF5B6900D88186 /* Doing+CoreDataProperties.swift in Sources */,
@@ -324,7 +338,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rhythm/Rhythm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rhythm/Preview Content\"";
 				DEVELOPMENT_TEAM = J8C6W5Z6MT;
 				ENABLE_PREVIEWS = YES;
@@ -335,6 +351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenbao.Rhythm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,7 +361,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rhythm/Rhythm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rhythm/Preview Content\"";
 				DEVELOPMENT_TEAM = J8C6W5Z6MT;
 				ENABLE_PREVIEWS = YES;
@@ -355,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenbao.Rhythm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
