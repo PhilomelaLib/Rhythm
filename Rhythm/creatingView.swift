@@ -52,8 +52,6 @@ struct creatingView: View {
 
     @State private var conment: String = ""
 
-    private let addingDate: Date = Date()
-
     @State private var reminber: Date? = nil
 
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
@@ -85,7 +83,7 @@ extension creatingView {
 
         i.conment = self.conment
 
-        i.addingDate = self.addingDate
+        i.addingDate = Date()
 
         i.remember = self.reminber
 

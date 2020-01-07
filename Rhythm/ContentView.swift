@@ -29,7 +29,7 @@ struct ContentView: View {
                     }
                 }
 
-                if self.doned {
+                if self.showDone {
                     ForEach(self.已完成, id: \Iterm.objectID) { i in
 
                         Section {
@@ -38,18 +38,30 @@ struct ContentView: View {
                     }
                 }
             }
+            .listStyle(GroupedListStyle())
+            .introspectNavigationController(customize: { (n: UINavigationController) in
+                let standardAppearance = UINavigationBarAppearance()
+                standardAppearance.configureWithOpaqueBackground() // 不透明背景
+                standardAppearance.shadowImage = nil // 去掉 navigationBar 下面的阴影
+                standardAppearance.shadowColor = .clear
+                n.navigationBar.standardAppearance = standardAppearance
+
+                n.navigationBar.compactAppearance = standardAppearance
+
+                n.navigationBar.scrollEdgeAppearance = standardAppearance
+            })
+                
             .navigationBarItems(leading:
-                Button(action: { self.doned.toggle() }) { Text("show doned") },
+                Button(action: { self.showDone.toggle() }) { Text("show doned") },
                                 trailing: self.addIterm)
             .navigationBarTitle(self.未完成.count.description)
-            .listStyle(GroupedListStyle())
 
             .environment(\.horizontalSizeClass, .regular)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
-    @State private var doned: Bool = false
+    @State private var showDone: Bool = false
 }
 
 extension ContentView {
@@ -57,9 +69,9 @@ extension ContentView {
 //        Button(action: self.addingIterm) {
 //            Text("add Iterm")
 //        }
-        
-        sheetButton(destination: {creatingView()}) {
-              Text("show")
+
+        sheetButton(destination: { creatingView() }) {
+            Text("show")
         }
     }
 

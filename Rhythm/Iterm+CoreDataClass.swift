@@ -68,7 +68,7 @@ extension Iterm {
     public static func 已完成() -> NSFetchRequest<Iterm> {
         let request = NSFetchRequest<Iterm>(entityName: "Iterm")
 
-        request.sortDescriptors = [NSSortDescriptor(key: "addingDate", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "doneDate", ascending: false)]
         request.predicate = NSPredicate(format: "isDoone == true")
         return request
     }

@@ -26,8 +26,10 @@ struct ItermView: View {
             
             self.conment
         }
-        .listRowBackground(self.entity.isWorking ? Color.green : Color.clear)
+        
         .contextMenu { self.menu }
+        
+        .listRowBackground(self.entity.isWorking ? Color.green : Color.clear)// 这一行放在 .contextMenu 下面就会起作用, 放到上面就不行, 不知道为啥?
     }
     
     @Environment(\.colorScheme) var colorscheme: ColorScheme
@@ -79,6 +81,20 @@ extension ItermView {
             .foregroundColor(self.entity.isDoone ? .red : .blue)
             .onTapGesture {
                 self.entity.isDoone.toggle()
+                
+                if self.entity.isDoone {
+                    self.entity.doneDate = Date()
+                } else {
+                    self.entity.doneDate = nil
+                }
+                
+                do {
+                    try Iterm.shared.save()
+                } catch {
+                    whenDebugCatching(err: error) {
+                        fatalError()
+                    }
+                }
             }
     }
     
@@ -90,7 +106,8 @@ extension ItermView {
                         self.entity.doingToggle(context: self.contentView.moc)
                     }
             } else {
-                self.entity.总耗时.foregroundColor(.gray)
+                self.entity.总耗时.formated
+                    .foregroundColor(.gray)
             }
         }
     }

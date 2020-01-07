@@ -16,16 +16,25 @@ extension Iterm {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Iterm> {
         return NSFetchRequest<Iterm>(entityName: "Iterm")
     }
-    
+
     @NSManaged public var addingDate: Date?
+    
+    @NSManaged public var isDoone: Bool
+    @NSManaged public var doneDate: Date?
+    
+    /// 已经认领
     @NSManaged public var isDoing: Bool
+    
+    /// 正在干活
     @NSManaged public var isWorking: Bool
+    
     @NSManaged public var remember: Date?
     @NSManaged public var title: String?
+    
     @NSManaged public var conment: String?
-    @NSManaged public var isDoone: Bool
+    
+    
     @NSManaged public var doing: NSOrderedSet?
-    // title
 }
 
 extension Iterm {
@@ -37,17 +46,17 @@ extension Iterm {
 
 extension Iterm {
     /// 输出大概长这样 `1 天 0 小时 0 分钟 1 秒`
-    var 总耗时: String {
+    var 总耗时: TimeFormater.计算后的天时分秒 {
         var resault: TimeInterval = 0
-        
+
         let allDoings = self.doing?.array as? [Doing]
-        
+
         if let all = allDoings {
             all.forEach { (d: Doing) in
                 resault += d.持续时间
             }
         }
-        
-        return TimeFormater.时间口语化(resault)
+
+        return TimeFormater.计算后的天时分秒(resault)
     }
 }

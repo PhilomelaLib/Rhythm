@@ -8,6 +8,7 @@
     <entity name="Iterm" representedClassName="Iterm" syncable="YES">
         <attribute name="addingDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="conment" optional="YES" attributeType="String"/>
+        <attribute name="doneDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isDoing" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isDoone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isWorking" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -17,6 +18,6 @@
     </entity>
     <elements>
         <element name="Doing" positionX="-54" positionY="18" width="128" height="88"/>
-        <element name="Iterm" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Iterm" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
