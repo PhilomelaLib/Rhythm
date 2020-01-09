@@ -42,13 +42,16 @@ struct ContentView: View {
             .introspectNavigationController(customize: { (n: UINavigationController) in
                 let standardAppearance = UINavigationBarAppearance()
                 standardAppearance.configureWithOpaqueBackground() // 不透明背景
+                
+//                standardAppearance.configureWithTransparentBackground()
                 standardAppearance.shadowImage = nil // 去掉 navigationBar 下面的阴影
                 standardAppearance.shadowColor = .clear
+                
                 n.navigationBar.standardAppearance = standardAppearance
 
-                n.navigationBar.compactAppearance = standardAppearance
+//                n.navigationBar.compactAppearance = standardAppearance
 
-                n.navigationBar.scrollEdgeAppearance = standardAppearance
+//                n.navigationBar.scrollEdgeAppearance = standardAppearance
             })
                 
             .navigationBarItems(leading:

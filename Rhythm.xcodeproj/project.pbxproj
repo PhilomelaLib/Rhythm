@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85BF023BF81B100FA11D6 /* ItermView.swift */; };
 		E7C85C1523C0D5CC00FA11D6 /* creatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */; };
+		E7D2C5D623C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */; };
 		E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */; };
 		E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */; };
 		E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		E7C85BF023BF81B100FA11D6 /* ItermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItermView.swift; sourceTree = "<group>"; };
 		E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rhythm.entitlements; sourceTree = "<group>"; };
 		E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creatingView.swift; sourceTree = "<group>"; };
+		E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "截屏2020-01-09下午8.18.53.png"; sourceTree = "<group>"; };
 		E7EA8EFB23BF54D100D88186 /* Rhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		E7EA8EFD23BF54D100D88186 /* Rhythm */ = {
 			isa = PBXGroup;
 			children = (
+				E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */,
 				E7C85C1323C0D5B400FA11D6 /* views */,
 				E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */,
 				E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7EA8F0E23BF54E700D88186 /* LaunchScreen.storyboard in Resources */,
+				E7D2C5D623C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png in Resources */,
 				E7EA8F0B23BF54E700D88186 /* Preview Assets.xcassets in Resources */,
 				E7EA8F0823BF54E700D88186 /* Assets.xcassets in Resources */,
 			);

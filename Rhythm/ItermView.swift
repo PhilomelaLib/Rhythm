@@ -29,7 +29,7 @@ struct ItermView: View {
         
         .contextMenu { self.menu }
         
-        .listRowBackground(self.entity.isWorking ? Color.green : Color.clear)// 这一行放在 .contextMenu 下面就会起作用, 放到上面就不行, 不知道为啥?
+        .listRowBackground(self.entity.isWorking ? Color.green : Color.clear) // 这一行放在 .contextMenu 下面就会起作用, 放到上面就不行, 不知道为啥?
     }
     
     @Environment(\.colorScheme) var colorscheme: ColorScheme
@@ -38,7 +38,17 @@ struct ItermView: View {
 extension ItermView {
     // MARK: - some Views
     
-    var headerFont: Font { .title }
+    var headerFont: Font {
+        #if os(iOS)
+        
+        return Font.title
+        
+        #else
+        
+        return Font.body
+        
+        #endif
+    }
     
     var header: some View {
         HStack(alignment: .center) {
@@ -132,3 +142,31 @@ extension ItermView {
         }
     }
 }
+
+struct adfadsfadsf: View {
+    @State private var selection: Int? = nil
+    
+    var body: some View {
+        List {
+            ForEach(0...199, id: \Int.self) { i in
+                
+                Text(i.description)
+                    .background(
+                        NavigationLink(destination: Text(i.description),
+                                       //                                       tag: i,
+//                                       selection: self.$selection,
+                                       label: { EmptyView() })
+                    )
+            }
+        }
+    }
+}
+
+// func 有(paramater: Int) { print(paramater) }
+//
+// func 没有(_ paramater: Int) { print(paramater) }
+//
+// func 调用() {
+//    没有(1)
+//    有(paramater: 1)
+// }

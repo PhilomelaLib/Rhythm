@@ -19,32 +19,28 @@ struct creatingView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("tilte", text: self.$title,
-                          onCommit: self.done)
-                    .border(Color.green)
+                TextField("tilte", text: self.$title
+                    //                    , onCommit: self.back
+                )
+                .border(Color.green)
 
-                TextField("tilte", text: self.$conment,
-                          onCommit: self.done)
-                    .border(Color.green)
+                TextField("comment", text: self.$conment
+//                    , onCommit: self.back
+                )
+                .border(Color.green)
                 Spacer()
             }
             .font(.title)
 
             .navigationBarTitle("create an Iterm", displayMode: .inline)
             .navigationBarItems(trailing:
-                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+                Button(action: { self.back() }) {
                     "done"
             })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onDisappear {
-            do {
-                try Iterm.shared.save()
-            } catch {
-                whenDebugCatching(err: error) {
-                    fatalError()
-                }
-            }
+            self.addingIterm()
         }
     }
 
@@ -68,6 +64,10 @@ extension creatingView {
 extension creatingView {
     // MARK: - functions
 
+    private func back() {
+        self.presentationMode.wrappedValue.dismiss()
+    }
+
     private func done() {
         if !self.title.isEmpty {
             self.addingIterm()
@@ -87,6 +87,14 @@ extension creatingView {
 
         i.remember = self.reminber
 
-        try! Iterm.shared.save()
+        do {
+            try Iterm.shared.save()
+        } catch {
+            whenDebugCatching(err: error) {
+                fatalError()
+            }
+        }
+
+//        try! Iterm.shared.save()
     }
 }
