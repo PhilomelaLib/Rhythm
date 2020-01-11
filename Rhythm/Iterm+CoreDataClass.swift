@@ -9,7 +9,7 @@
 
 import CoreData
 import Foundation
-import nav
+//import nav
 
 @objc(Iterm)
 public class Iterm: NSManagedObject {}

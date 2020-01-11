@@ -6,7 +6,7 @@
 //  Copyright © 2020 chenbao. All rights reserved.
 //
 
-import nav
+//import nav
 import SwiftUI
 
 extension String: View {

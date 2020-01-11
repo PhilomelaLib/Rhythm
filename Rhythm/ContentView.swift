@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import nav
+import Introspect
 import SwiftUI
 
 struct ContentView: View {
@@ -42,18 +42,18 @@ struct ContentView: View {
             .introspectNavigationController(customize: { (n: UINavigationController) in
                 let standardAppearance = UINavigationBarAppearance()
                 standardAppearance.configureWithOpaqueBackground() // 不透明背景
-                
+
 //                standardAppearance.configureWithTransparentBackground()
                 standardAppearance.shadowImage = nil // 去掉 navigationBar 下面的阴影
                 standardAppearance.shadowColor = .clear
-                
+
                 n.navigationBar.standardAppearance = standardAppearance
 
 //                n.navigationBar.compactAppearance = standardAppearance
 
 //                n.navigationBar.scrollEdgeAppearance = standardAppearance
             })
-                
+
             .navigationBarItems(leading:
                 Button(action: { self.showDone.toggle() }) { Text("show doned") },
                                 trailing: self.addIterm)
@@ -85,5 +85,61 @@ extension ContentView {
         i.addingDate = Date()
 
         try! self.moc.save()
+    }
+}
+
+public struct sheetButton<Content: View, Destination: View>: View {
+    /// - Parameters:
+    ///   - destination: 被弹出的视图
+    ///   - content: sheetButton 的外观
+    public init(destination: @escaping () -> Destination, @ViewBuilder content: @escaping () -> Content) {
+        self.destination = destination
+        self.content = content
+    }
+
+    /// sheetButton 的外观
+    private var content: () -> Content
+
+    /// 被弹出的视图
+    let destination: () -> Destination
+
+    /// 用于 弹出 destination
+    @State private var didSheeted: Bool = false
+
+    /// 用于确定是否 使用 Button 来包住 content
+    @State private var style: sheetButton.Style = .button
+
+    public var body: some View {
+        Group {
+            if self.style == .button {
+                Button(action: {
+                    self.didSheeted.toggle()
+                }) {
+                    self.content()
+                }
+            } else if self.style == .none {
+                self.content()
+                    .onTapGesture {
+                        self.didSheeted.toggle()
+                    }
+            } else {
+                self.content()
+                    .onTapGesture {
+                        self.didSheeted.toggle()
+                    }
+            }
+        }
+        .sheet(isPresented: self.$didSheeted, content: self.destination)
+    }
+
+    public func sheetButtonStyle(_ style: sheetButton.Style) -> sheetButton {
+        let B = self
+        B.style = style
+        return B
+    }
+
+    public enum Style {
+        case button
+        case none
     }
 }

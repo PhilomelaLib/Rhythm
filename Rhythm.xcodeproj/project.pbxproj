@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7BD1AC123C9773B00113961 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = E7BD1AC023C9773B00113961 /* Introspect */; };
+		E7BD1AC323C978BD00113961 /* adfdasf.png in Resources */ = {isa = PBXBuildFile; fileRef = E7BD1AC223C978BC00113961 /* adfdasf.png */; };
 		E7C85BF123BF81B100FA11D6 /* ItermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85BF023BF81B100FA11D6 /* ItermView.swift */; };
 		E7C85C1523C0D5CC00FA11D6 /* creatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */; };
-		E7D2C5D623C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */; };
 		E7EA8EFF23BF54D200D88186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */; };
 		E7EA8F0123BF54D200D88186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */; };
 		E7EA8F0423BF54D200D88186 /* Rhythm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F0223BF54D200D88186 /* Rhythm.xcdatamodeld */; };
@@ -17,7 +18,6 @@
 		E7EA8F0823BF54E700D88186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0723BF54E700D88186 /* Assets.xcassets */; };
 		E7EA8F0B23BF54E700D88186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0A23BF54E700D88186 /* Preview Assets.xcassets */; };
 		E7EA8F0E23BF54E700D88186 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8F0C23BF54E700D88186 /* LaunchScreen.storyboard */; };
-		E7EA8F1723BF590200D88186 /* nav in Frameworks */ = {isa = PBXBuildFile; productRef = E7EA8F1623BF590200D88186 /* nav */; };
 		E7EA8F1C23BF5B6900D88186 /* Doing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1823BF5B6900D88186 /* Doing+CoreDataClass.swift */; };
 		E7EA8F1D23BF5B6900D88186 /* Doing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1923BF5B6900D88186 /* Doing+CoreDataProperties.swift */; };
 		E7EA8F1E23BF5B6900D88186 /* Iterm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EA8F1A23BF5B6900D88186 /* Iterm+CoreDataClass.swift */; };
@@ -25,10 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7BD1AC223C978BC00113961 /* adfdasf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adfdasf.png; sourceTree = "<group>"; };
 		E7C85BF023BF81B100FA11D6 /* ItermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItermView.swift; sourceTree = "<group>"; };
 		E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rhythm.entitlements; sourceTree = "<group>"; };
 		E7C85C1423C0D5CC00FA11D6 /* creatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creatingView.swift; sourceTree = "<group>"; };
-		E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "截屏2020-01-09下午8.18.53.png"; sourceTree = "<group>"; };
 		E7EA8EFB23BF54D100D88186 /* Rhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EA8F0023BF54D200D88186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,13 +49,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7EA8F1723BF590200D88186 /* nav in Frameworks */,
+				E7BD1AC123C9773B00113961 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7BD1ABC23C975AD00113961 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E7BD1AC223C978BC00113961 /* adfdasf.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E7C85C1323C0D5B400FA11D6 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +76,7 @@
 		E7EA8EF223BF54D100D88186 = {
 			isa = PBXGroup;
 			children = (
+				E7BD1ABC23C975AD00113961 /* Images */,
 				E7EA8EFD23BF54D100D88186 /* Rhythm */,
 				E7EA8EFC23BF54D100D88186 /* Products */,
 			);
@@ -84,7 +93,6 @@
 		E7EA8EFD23BF54D100D88186 /* Rhythm */ = {
 			isa = PBXGroup;
 			children = (
-				E7D2C5D523C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png */,
 				E7C85C1323C0D5B400FA11D6 /* views */,
 				E7C85C1223C0D3C800FA11D6 /* Rhythm.entitlements */,
 				E7EA8EFE23BF54D200D88186 /* AppDelegate.swift */,
@@ -136,7 +144,7 @@
 			);
 			name = Rhythm;
 			packageProductDependencies = (
-				E7EA8F1623BF590200D88186 /* nav */,
+				E7BD1AC023C9773B00113961 /* Introspect */,
 			);
 			productName = Rhythm;
 			productReference = E7EA8EFB23BF54D100D88186 /* Rhythm.app */;
@@ -167,7 +175,7 @@
 			);
 			mainGroup = E7EA8EF223BF54D100D88186;
 			packageReferences = (
-				E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */,
+				E7BD1ABF23C9773B00113961 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = E7EA8EFC23BF54D100D88186 /* Products */;
 			projectDirPath = "";
@@ -184,9 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7EA8F0E23BF54E700D88186 /* LaunchScreen.storyboard in Resources */,
-				E7D2C5D623C751D50007EF01 /* 截屏2020-01-09下午8.18.53.png in Resources */,
 				E7EA8F0B23BF54E700D88186 /* Preview Assets.xcassets in Resources */,
 				E7EA8F0823BF54E700D88186 /* Assets.xcassets in Resources */,
+				E7BD1AC323C978BD00113961 /* adfdasf.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,21 +416,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */ = {
+		E7BD1ABF23C9773B00113961 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/chenba0/nav.git";
+			repositoryURL = "https://github.com/timbersoftware/SwiftUI-Introspect.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.49;
+				minimumVersion = 0.0.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E7EA8F1623BF590200D88186 /* nav */ = {
+		E7BD1AC023C9773B00113961 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E7EA8F1523BF590200D88186 /* XCRemoteSwiftPackageReference "nav" */;
-			productName = nav;
+			package = E7BD1ABF23C9773B00113961 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 

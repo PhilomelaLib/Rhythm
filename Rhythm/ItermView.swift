@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import nav
+//import nav
 import SwiftUI
 
 struct ItermView: View {
@@ -170,3 +170,15 @@ struct adfadsfadsf: View {
 //    没有(1)
 //    有(paramater: 1)
 // }
+
+func whenDebugCatching(message: String = "", err: Error, f: () -> ()) {
+    #if DEBUG
+    
+    print("\n🔰🔰🔰🔰🔰 ERROR 🔰🔰🔰🔰🔰:\n message: \(message)\n \(err)\n")
+    
+    f()
+    
+    fatalError()
+    
+    #endif
+}
